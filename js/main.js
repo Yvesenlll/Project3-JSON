@@ -43,7 +43,7 @@ function populateHeader(jsonObj){
 
     // insert more details
     let headerPara = document.createElement('p');
-    headerPara.textContent = 'Head Office: ' + jsonObj['headOffice'] + ' , Established:  ' + jsonObj['established'];
+    headerPara.textContent = 'Head Office: ' + jsonObj['headOffice'] + ', Established:  ' + jsonObj['established'];
     header.appendChild(headerPara);
 };
 
