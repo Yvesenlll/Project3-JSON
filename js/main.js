@@ -61,7 +61,7 @@ function fiveWeirdThings(jsonObj){
         let p2 = document.createElement('p');
         
 
-        img.setAttribute('src', 'https://github.com/Yvesenlll/Project3-JSON/' + fiveWeirdThings[i].img);
+        img.setAttribute('src', 'hhttps://yvesenlll.github.io/Project3-JSON/' + fiveWeirdThings[i].img);
         img.setAttribute('alt', fiveWeirdThings[i].img);
 
         h2.textContent = fiveWeirdThings[i].name;
