@@ -37,13 +37,13 @@ request.addEventListener('load', event => {
 //declare the populateHeader Function
 function populateHeader(jsonObj){
     // insert company name to the h1
-    let h1 = document.createElement('h1');
-    h1.textContent = jsonObj['companyName'];
-    header.appendChild(h1);
+    let headerH1 = document.createElement('h1');
+    headerH1.textContent = jsonObj['companyName'];
+    header.appendChild(headerH1);
 
     // insert more details
     let headerPara = document.createElement('p');
-    headerPara.textContent = 'Head Office: ' + jsonObj['headOffice'] + ', Established:  ' + jsonObj['established'];
+    headerPara.textContent = 'Head Office: ' + jsonObj['headOffice'] + ',  Established:  ' + jsonObj['established'];
     header.appendChild(headerPara);
 };
 
@@ -52,7 +52,7 @@ function fiveWeirdThings(jsonObj){
     //bind those things to one variable
     let fiveWeirdThings = jsonObj['fiveWeirdThingsOfTheDay'];
 
-    for(let i=0; i < fiveWeirdThings; i++)
+    for(let i=0; i < fiveWeirdThings.length ; i++)
     {
         let article = document.createElement('article');
         let h2 = document.createElement('h2');
