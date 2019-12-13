@@ -3,7 +3,7 @@ let header = document.querySelector('header');
 let section = document.querySelector('section');
 
 // I didn't get what is the step 2 means
-
+let requestURL="https://yvesenlll.github.io/Project3-JSON/js/WeirdDeals.json"
 
 // create a new XHR Object
 let request = new XMLHttpRequest();
@@ -16,6 +16,23 @@ request.responseType = 'json';
 
 // send the request
 request.send();
+
+//add an event handler 
+request.addEventListener('load', event => {
+    let WeirdThingsInc = request.response;
+    console.log(WeirdThingsInc);
+    populateHeader(WeirdThingsInc);
+    fiveWeirdThings(WeirdThingsInc);
+})
+
+
+// //add event handler onload
+// request.onload = function(){
+//     let WeirdThingsInc = request.response;
+//     console.log(WeirdThingsInc);
+//     populateHeader(WeirdThingsInc);
+//     fiveWeirdThings(WeirdThingsInc);
+// }
 
 //declare the populateHeader Function
 function populateHeader(jsonObj){
@@ -41,11 +58,21 @@ function fiveWeirdThings(jsonObj){
         let h2 = document.createElement('h2');
         let img = document.createElement('img');
         let p1 = document.createElement('p');
+        let p2 = document.createElement('p');
+        
 
-        img.setAttribute('src', '???????????');
+        img.setAttribute('src', 'https://github.com/Yvesenlll/Project3-JSON/' + fiveWeirdThings[i].img);
         img.setAttribute('alt', fiveWeirdThings[i].img);
 
+        h2.textContent = fiveWeirdThings[i].name;
+        p1.textContent = '$ ' + fiveWeirdThings[i].price;
+        p2.textContent = fiveWeirdThings[i].description;
 
+        article.appendChild(img);
+        article.appendChild(h2);
+        article.appendChild(p1); 
+        article.appendChild(p2);
+        section.appendChild(article); 
 
     }
 
@@ -54,14 +81,6 @@ function fiveWeirdThings(jsonObj){
 
 
 
-
-//add an event handler 
-request.addEventListener('load', event => {
-    let WeirdThingsInc = request.response;
-    console.log(WeirdThingsInc);
-    populateHeader(WeirdThingsInc);
-    fiveWeirdThings(WeirdThingsInc);
-})
 
 
 
